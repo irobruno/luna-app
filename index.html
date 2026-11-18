@@ -574,7 +574,7 @@ function medSheet(d){
     <div class="sm l3" style="margin-top:6px">Pode confiar: você segurou o botão pra confirmar.</div></div>
     <button class="btn gr" onclick="closeSheet()">Ok</button>
     <button class="sm" id="undoMed" style="width:100%;margin-top:14px;color:var(--red)" onclick="if(this.dataset.arm){delete S.meds.log['${d}'];save();closeSheet();render();toast('Registro removido',true)}else{this.dataset.arm=1;this.textContent='Toque de novo para remover o registro'}">Marquei errado</button>`);return}
-  openSheet(`<div class="flex" style="gap:12px">${sq('pill','var(--teal)')}<div style="flex:1"><b style="font-size:17px;font-weight:600">${esc(M.name)}</b><div class="sm l2">${isT?'Hoje':dl}</div></div>
+  openSheet(`<div class="flex" style="gap:12px">${sq('pill','var(--pink)')}<div style="flex:1"><b style="font-size:17px;font-weight:600">${esc(M.name)}</b><div class="sm l2">${isT?'Hoje':dl}</div></div>
     <button class="sm" style="color:var(--blue);font-weight:600" onclick="medRename()">Renomear</button></div>
     <div class="aff" style="font-size:26px;margin:22px 0 4px;text-align:center">${isT?'Você acabou de tomar?':'Você tomou '+dl.toLowerCase()+'?'}</div>
     <div class="sm l2" style="text-align:center">${isT?'Só confirme depois de tomar.':'Vai ficar marcado como registrado depois.'}</div>
@@ -810,7 +810,7 @@ function welcome(){
   setTimeout(()=>$('#wName')?.focus(),450)}
 
 /* ---------- botão + manual ---------- */
-const QA=[['gasto','wallet','var(--red)','Gasto'],['entrada','down','var(--green)','Entrada'],['tarefa','check','var(--blue)','Tarefa'],['comp','cal','var(--purple)','Compromisso'],
+const QA=[['gasto','wallet','var(--red)','Gasto'],['entrada','down','var(--green)','Entrada'],['tarefa','check','var(--blue)','Tarefa'],['comp','cal','var(--purple)','Agenda'],
   ['nota','bulb','var(--yellow)','Anotação'],['menst','drop','var(--pink)','Menstruação'],['rel','heart','#FF7EB6','Relação'],['grat','hands','var(--orange)','Gratidão']];
 let qd=null;
 function openCapture(){openSheet(`<h2>Adicionar</h2><div class="qgrid">${QA.map(([k,i,c,l])=>`<button class="qa" onclick="qa('${k}')">${sq(i,c,`width:52px;height:52px;border-radius:16px;font-size:25px;${k==='nota'?'color:#000':''}`)}<span>${l}</span></button>`).join('')}</div>`)}
